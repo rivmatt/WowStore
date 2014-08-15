@@ -1,4 +1,24 @@
 Rails.application.routes.draw do
+  get 'trend/index'
+
+  get 'trend/show'
+
+  get 'stors/index'
+
+  get 'stors/show'
+
+  get 'stors/details'
+
+  get 'stors/sales'
+
+  get 'stors/products'
+
+  get 'customers/index'
+
+  get 'customers/show'
+
+  get 'customers/details'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -26,6 +46,22 @@ Rails.application.routes.draw do
   #     end
   #   end
 
+  resources :customers
+  resources :stors
+
+  #clientes
+  get '/clientes', to: 'customers#index'
+  get 'clientes/:id/detalles', to: 'customers#details', as: :details
+
+  
+
+  #tiendas
+  get '/stors', to: 'stors#index'
+  get 'stors/:id/details', to: 'stors#details', as: :store_details
+  get 'stors/:id/products', to: 'stors#products', as: :store_products
+
+  #visitas
+  get 'product/:id/trends', to: 'trend#index', as: :trends
   # Example resource route with sub-resources:
   #   resources :products do
   #     resources :comments, :sales

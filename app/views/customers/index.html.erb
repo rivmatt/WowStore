@@ -1,0 +1,21 @@
+<h1>Listado de Clientes</h1>
+<p>Find me in app/views/customers/index.html.erb</p>
+
+
+<table>
+  <thead>
+    <tr>
+    	<th>#</th>
+      <th width="150">cliente</th>
+
+    </tr>
+  </thead>
+  <tbody>
+  	<% @listado.each do |list| %>
+    <tr>
+      <td></td>
+      <td><%= link_to "#{list.name}", customer_path(list) %> <br/></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

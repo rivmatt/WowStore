@@ -1,0 +1,26 @@
+<h1>Detalle de Clientes</h1>
+<p>Find me in app/views/customers/show.html.erb</p>
+
+<table>
+  <thead>
+    <tr>
+      <th width="200">Nombre</th>
+      <th>Correo</th>
+      <th width="150">Estado</th>
+      <th>Creacion</th>
+      <th>Actualzacion</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @detalle.name %></td>
+      <td><%= @detalle.email%></td>
+      <td><%= @detalle.active%></td>
+      <td><%= @detalle.created_at%></td>
+      <td><%= @detalle.updated_at%></td>
+    </tr>
+  </tbody>
+</table>
+
+<%= link_to "detalle de compras", details_path(@detalle) %> <br/>

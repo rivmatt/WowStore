@@ -1,0 +1,36 @@
+<h1>Lista de Compras Efectuadas por Cliente</h1>
+<p>Find me in app/views/customers/details.html.erb</p>
+
+
+
+<table>
+  <thead>
+    <tr>
+      <th width="150">cliente</th>
+      <th>producto</th>
+      <th width="100">cantidad</th>
+      <th width="150">sub-total</th>
+      <th width="150">tax</th>
+      <th width="150">total</th>
+      <th width="100">estado</th>
+      <th width="150">Creacion</th>
+      <th width="150">Actualzacion</th>
+
+    </tr>
+  </thead>
+  <tbody>
+  	<% @compras.each do |compra| %>
+    <tr>
+      <td><%= compra.customer_id %></td>
+      <td><%= compra.product_id %></td>
+      <td><%= compra.quantity %></td>
+      <td>$<%= compra.shipping_price %></td>
+      <td>$<%= compra.tax %></td>
+      <td>$<%= compra.total %></td>
+      <td><%= compra.status %></td>
+      <td><%= compra.created_at %></td>
+      <td><%= compra.updated_at %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

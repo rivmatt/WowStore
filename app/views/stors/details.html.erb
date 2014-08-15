@@ -1,0 +1,35 @@
+<h1>Ventas de Tienda</h1>
+<p>Find me in app/views/stors/details.html.erb</p>
+
+
+<table>
+  <thead>
+    <tr>
+      <th width="150">cliente</th>
+      <th>producto</th>
+      <th width="100">cantidad</th>
+      <th width="150">sub-total</th>
+      <th width="150">tax</th>
+      <th width="150">total</th>
+      <th width="100">estado</th>
+      <th width="150">Creacion</th>
+      <th width="150">Actualzacion</th>
+
+    </tr>
+  </thead>
+  <tbody>
+  	<% @sales.each do |sal| %>
+    <tr>
+      <td><%= sal.customer_id %></td>
+      <td><%= sal.product_id %></td>
+      <td><%= sal.quantity %></td>
+      <td>$<%= sal.shipping_price %></td>
+      <td>$<%= sal.tax %></td>
+      <td>$<%= sal.total %></td>
+      <td><%= sal.status %></td>
+      <td><%= sal.created_at %></td>
+      <td><%= sal.updated_at %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

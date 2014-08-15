@@ -1,0 +1,27 @@
+<h1>Detalles de tienda</h1>
+<p>Find me in app/views/stors/show.html.erb</p>
+
+<table>
+  <thead>
+    <tr>
+      <th width="200">Nombre</th>
+      <th>Descripcion</th>
+      <th width="150">Estado</th>
+      <th>Creacion</th>
+      <th>Actualzacion</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @details.name %></td>
+      <td><%= @details.description%></td>
+      <td><%= @details.active%></td>
+      <td><%= @details.created_at%></td>
+      <td><%= @details.updated_at%></td>
+    </tr>
+  </tbody>
+</table>
+
+<%= link_to "detalle de ventas", store_details_path(@details) %> <br/> <br>
+<%= link_to "lista de productos", store_products_path(@details) %> <br/>
